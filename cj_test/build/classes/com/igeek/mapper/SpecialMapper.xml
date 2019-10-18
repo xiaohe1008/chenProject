@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper   
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.igeek.dao.ISpecialDao">
+
+	<select id="findAll" resultType="Special">
+		select * from special
+	</select>
+
+	<select id="findById" resultType="Special">
+		select * from special where
+		specialId=#{specialId}
+	</select>
+
+	<select id="findByName" resultType="Special">
+		select * from special where
+		specialName=#{specialName}
+	</select>
+
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper   
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.igeek.dao.IMusicListDao">
+
+
+	<select id="findAll" resultType="MusicList">
+		select * from musicList
+	</select>
+
+	<select id="findById" resultType="MusicList">
+		select * from musicList where
+		musicListId=#{musicListId}
+	</select>
+
+	<select id="findByName" resultType="MusicList">
+		select * from musicList where
+		musicListName=#{musicListName}
+	</select>
+
+	<select id="findByCreator" resultType="MusicList">
+		select * from musicList
+		where creator=#{creator}
+	</select>
+
+	<select id="findMusicListTop5" resultType="MusicList">
+		select * from
+		musicList order by count desc limit 0,5
+	</select>
+
+</mapper>

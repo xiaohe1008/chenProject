@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration  
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+		<package name="com.igeek.pojo"/>
+	</typeAliases>
+	
+	<!-- mybatis的使用环境 -->
+	<environments default="igeek">
+		<environment id="igeek">
+			<!-- 事务管理器配置 -->
+			<transactionManager type="JDBC"></transactionManager>
+			<!-- 配置数据源 -->
+			<dataSource type="POOLED">
+				<property name="url" value="jdbc:mysql://localhost:3306/music?serverTimezone=GMT%2B8"/>
+				<property name="username" value="root"/>
+				<property name="password" value="123456"/>
+				<property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- 配置映射文件 -->
+	<mappers>
+		<mapper resource="com/igeek/mapper/MusicListMapper.xml"/>	
+		<mapper resource="com/igeek/mapper/SpecialMapper.xml"/> 
+		<mapper resource="com/igeek/mapper/MusicMapper.xml"/> 
+	</mappers>
+</configuration>
